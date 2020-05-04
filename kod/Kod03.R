@@ -30,6 +30,11 @@ ggplot(df, aes(x = def, y = term)) +
   geom_point() +
   stat_smooth() + xlab("Deformasyon [mm]") +
   ylab("Sıcaklık [°C]")
-
+  
 # Korelasyon katsayısı
 cor(df$def,df$term)
+
+# Basit regresyon modeli
+model <- lm(def ~ term, data = df)
+model
+summary(model)
